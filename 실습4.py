@@ -58,3 +58,4 @@ attendance_book.mark_student_attendance(103)
 # 출석 요약 및 출석한 학생 목록 출력
 print("출석 요약:", attendance_book.get_attendance_summary())
 print("출석한 학생 목록:", attendance_book.get_student_list())
+print("hello")

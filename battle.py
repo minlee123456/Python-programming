@@ -26,3 +26,5 @@ class Battle:
 
 
         print("전투 종료")
+
+print("hello")

@@ -26,3 +26,4 @@ num_neuron=5
 bias = 5
 outputs = cal_neuron(num_neuron, inputs)
 print(outputs)
+print("hello")

@@ -54,3 +54,4 @@ theater.reserve_movie_seat("인터스텔라", "19:00", 5)
 # 영화의 상영 시간표와 예약 가능한 좌석 수 확인
 theater.get_movie_schedule("인셉션")
 theater.get_movie_schedule("인터스텔라")
+print("hello")

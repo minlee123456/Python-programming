@@ -176,3 +176,5 @@ class Drangon(Monster):
 
     def description(self):
         return "날개 달림"
+
+print("hello")

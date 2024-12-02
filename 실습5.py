@@ -57,3 +57,4 @@ grade_book.add_student_score(103, 90)
 # 상위 2명의 학생 출력
 top_students = grade_book.get_top_students(2)
 print("상위 2명 학생의 성적:", top_students)
+print("hello")

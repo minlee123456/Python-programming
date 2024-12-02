@@ -19,3 +19,4 @@ book1 = Book("어린왕자", "앙투안 드 생텍쥐페리", 13000)
 book2 = Book("모모", "미하엘 엔데 저", 13000)
 
 print(book1 == book2)
+print("hello")

@@ -1,59 +1,56 @@
-#문제 1: 무한 Generator=
-def infi_num():
-    num = 0
-    while True:
-        yield num
-        num += 1
+print("별 찍기\n1.☆\n2.★\n3.#")
+A = int(input("모드를 선택 하시오 : "))
+N = int(input("길이를 입력 하시오 : "))
+if A == 1:
+    for i in range(N):
+        if i == 0:
+            print(" " * (N * 2 + 2), "☆", sep='')
+        else:
+            print(" " * (N * 2 + 2 - i), "☆", " " * (i * 2 - 1), "☆", sep='')
 
-gen = infi_num()
+    print("☆" * N, " " * (N * 2 - 1), "☆" * N, sep='')
 
-for i in range(11):
-    print(next(gen))
+    for i in range(N):
+        if i <= int(N / 3):
+            print(" " * (N - 3 + i * 2), "☆", " " * (N * 4 - 1 - 4 * i), "☆", sep='')
+        elif i == 2:
+            print(" " * (N + 2 - i), "☆", " " * (i + 3), "☆", " " * (N + 2 - i), "☆", sep='')
 
+    for i in range(N):
+        if i <= int(N / 2):
+            print(" " * (N - i - 1), "☆", " " * (N - 2 * i - 2), "☆", " " * (N + 4 * i + i), "☆", " " * (N - 3 - i),
+                  "☆", sep='')
 
+    print(" ", "☆", " " * (N * 4), "☆", sep='')
+elif A == 2:
+    for i in range(N):
+        if i == 0:
+            print(" " * (N * 2 + 2), "★", sep='')
+        else:
+            print(" " * (N * 2 + 2 - i), "★", "★" * (i * 2 - 1), "★", sep='')
 
-#문제 2: 제너레이터와 코루틴 결합
-def infi_num():
-    num = 0
-    while True:
-        yield num
-        num += 1
+    print("★" * N, "★" * (N * 2 - 1), "★" * N, sep='')
 
-def corutine():
-    while True:
-        value = yield
-        print(value * 2)
+    for i in range(N):
+        if i <= int(N / 3):
+            print(" " * (N - 3 + i * 2), "★", "★" * (N * 3 - 1 - 4 * i), "★", sep='')
+        elif i == 2:
+            print(" " * (N + 2 - i), "★", "★" * (i + 3), "★", "★" * (N + 2 - i), sep='')
 
+    for i in range(N):
+        if i <= int(N / 2):
+            print(" " * (N - i - 1), "★", "★" * (N - 2 * i - 2), "★", " " * (N + 5 * i + i), "★", "★" * (N - 3 - i + 2),
+                  sep='')
 
-gen = infi_num()
-co = corutine()
-next(co)
+    print(" ", "★", " " * (N * 4), "★", sep='')
 
-for i in range(11):
-    num = next(gen)
-    co.send(num)
-
-
-
-
-#문제 3: 텍스트 처리 시스템
-def read_lines(file_name):
-    with open(file_name) as f:
-        for line in f:
-            yield line.strip()
-
-def corutine():
-    while True:
-        line = yield
-        print(line.upper())
-
-gen = read_lines('../../../Desktop/파이썬프/hihi.txt')
-co = corutine()
-next(co)
-
-for line in read_lines('../../../Desktop/파이썬프/hihi.txt'):
-    print(line)
-    co.send(line)
-
-
-
+elif A == 3:
+    for i in range(N):
+        if i == 0:
+            print(" " * (N - 2 * i), "#", " " * (N - 2), "#", sep='')
+        elif i == N - 1:
+            print("#", " " * (2 * i - N), "#", sep='')
+        elif i == 1 or i == N - 2:
+            print("#" * N * 2, sep='')
+        else:
+            print(" " * (N - i), "#", " " * (N - 2), "#", sep='')
